@@ -8,6 +8,22 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const modal = $("#modal");
 
+function updateReadingProgress() {
+  const root = document.documentElement;
+  const max = root.scrollHeight - root.clientHeight;
+  const pct = max > 0 ? (root.scrollTop / max) * 100 : 0;
+  const bar = document.getElementById("readingProgress");
+  if (bar) bar.style.width = pct + "%";
+}
+
+function updateModalProgress() {
+  const windowEl = document.querySelector(".modal__window");
+  const bar = document.getElementById("modalProgress");
+  if (!windowEl || !bar) return;
+  const max = windowEl.scrollHeight - windowEl.clientHeight;
+  bar.style.width = (max > 0 ? (windowEl.scrollTop / max) * 100 : 0) + "%";
+}
+
 function updateClock() {
   const el = $("#currentDate");
   if (!el) return;
@@ -185,8 +201,11 @@ function bind() {
   }, { once: true }));
 }
 
+window.addEventListener("scroll", updateReadingProgress, { passive: true });
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+  updateReadingProgress();
+  document.querySelector(".modal__window")?.addEventListener("scroll", updateModalProgress, { passive: true });
   updateClock();
   setInterval(updateClock, 60000);
   bind();
