@@ -24,6 +24,18 @@ function updateModalProgress() {
   bar.style.width = (max > 0 ? (windowEl.scrollTop / max) * 100 : 0) + "%";
 }
 
+
+function syncReadingProgress() {
+  const article = document.querySelector(".modal__article");
+  if (!article || !modal?.classList.contains("is-open")) {
+    document.documentElement.style.setProperty("--reading-progress", "0%");
+    return;
+  }
+  const max = Math.max(1, article.scrollHeight - article.clientHeight);
+  const progress = Math.min(100, Math.max(0, (article.scrollTop / max) * 100));
+  document.documentElement.style.setProperty("--reading-progress", progress + "%");
+}
+
 function updateClock() {
   const el = $("#currentDate");
   if (!el) return;
@@ -202,6 +214,8 @@ function bind() {
 }
 
 window.addEventListener("scroll", updateReadingProgress, { passive: true });
+document.addEventListener("scroll", syncReadingProgress, { passive: true });
+
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   updateReadingProgress();
