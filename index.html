@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="INSÓLITO — historias curiosas, ciencia, animales, espacio e historia.">
+<meta name="theme-color" content="#f3efe7">
+<title>INSÓLITO — Historias que merecen una segunda mirada</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3efe7;color:#111216;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}.bar{background:#111216;color:#fff;padding:11px max(18px,calc((100% - 1160px)/2));font-size:12px;display:flex;justify-content:space-between}.nav{position:sticky;top:0;z-index:20;background:#f3efe7ee;backdrop-filter:blur(14px);border-bottom:1px solid #d7d0c5;padding:17px max(18px,calc((100% - 1160px)/2));display:flex;align-items:center;gap:28px}.logo{font:900 43px/1 Georgia,serif;letter-spacing:-4px}.logo b,.tag,.eyebrow{color:#ed493e}.links{margin-left:auto;display:flex;gap:24px;font-size:14px;font-weight:700}.links a:hover{color:#ed493e}.menu{display:none;margin-left:auto;border:1px solid #d7d0c5;border-radius:50%;width:46px;height:46px;background:none}.wrap{max-width:1160px;margin:auto;padding:0 18px}.hero{padding:72px 0 35px}.eyebrow{font-weight:800;letter-spacing:.17em;font-size:12px}h1,h2,h3{font-family:Georgia,'Times New Roman',serif}.hero h1{font-size:clamp(52px,8vw,100px);line-height:.88;letter-spacing:-5px;max-width:1050px;margin:18px 0}.hero p{font-size:20px;line-height:1.55;color:#6d6962;max-width:740px}.ad{height:92px;border:1px dashed #c9c1b5;display:grid;place-items:center;color:#aaa39a;font-size:11px;letter-spacing:.17em;margin:15px 0 45px}.feature{height:560px;border-radius:28px;overflow:hidden;position:relative;color:#fff;box-shadow:0 24px 65px #0002;cursor:pointer}.feature svg{position:absolute;width:100%;height:100%;inset:0}.shade{position:absolute;inset:0;background:linear-gradient(0deg,#000e,transparent 72%)}.feature-copy{position:absolute;left:44px;right:44px;bottom:38px}.tag{display:inline-block;background:#ed493e;color:#fff;padding:9px 13px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.12em}.feature h2{font-size:clamp(40px,6vw,72px);line-height:.94;letter-spacing:-3px;max-width:930px;margin:16px 0 10px}.feature p{font-size:17px;max-width:720px;color:#ddd}.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:60px 0 20px}.search{flex:1;min-width:230px;border:1px solid #d5cec2;background:#fffdf8;border-radius:999px;padding:14px 18px;outline:none}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:1px solid #d5cec2;background:none;border-radius:999px;padding:10px 13px;font-weight:700}.filter.active,.filter:hover{background:#111216;color:#fff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 0 80px}.card{background:#fffdf8;border:1px solid #d7d0c5;border-radius:20px;overflow:hidden;transition:.2s;cursor:pointer}.card:hover{transform:translateY(-5px);box-shadow:0 18px 45px #0002}.card-art{height:230px}.card-art svg{width:100%;height:100%}.card-body{padding:21px}.card h3{font-size:28px;line-height:1.03;letter-spacing:-1px;margin:11px 0}.card p{color:#6d6962;line-height:1.5;margin:0 0 17px}.meta{font-size:11px;color:#888278;font-weight:700;letter-spacing:.04em}.newsletter{background:#111216;color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:80px}.newsletter h2{font-size:48px;line-height:.96;margin:8px 0}.newsletter p{color:#c2beb7}.form{display:flex;background:#fff;border-radius:999px;padding:5px;margin-top:25px}.form input{flex:1;min-width:0;border:0;outline:0;padding:12px 15px;border-radius:999px}.form button{border:0;border-radius:999px;background:#ed493e;color:#fff;padding:12px 18px;font-weight:800}footer{background:#111216;color:#fff;padding:48px 0}.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}footer p,footer a{color:#aaa59d;font-size:14px}footer a{display:block;margin:9px 0}.copy{border-top:1px solid #333;margin-top:30px;padding-top:18px;font-size:11px;color:#777}.overlay{position:fixed;inset:0;background:#000b;z-index:60;display:none;padding:16px;overflow:auto}.overlay.open{display:block}.reader{max-width:900px;margin:15px auto;background:#fffdf8;border-radius:25px;overflow:hidden;position:relative}.reader-art{height:390px;position:relative}.reader-art svg{width:100%;height:100%}.close{position:absolute;right:20px;top:20px;width:48px;height:48px;border:0;border-radius:50%;background:#fff;font-size:28px;z-index:3}.reader-copy{padding:38px;max-width:790px;margin:auto}.reader-copy h2{font-size:clamp(42px,6vw,68px);line-height:.94;letter-spacing:-3px;margin:15px 0}.lead{font-size:22px;line-height:1.55;color:#45423d}.reader-copy p{font-size:17px;line-height:1.8;color:#45423d}.source{border-top:1px solid #d7d0c5;margin-top:30px;padding-top:18px;font-size:13px;color:#777}.source a{color:#ed493e;font-weight:800}.legal{padding:40px}.legal h2{font-size:50px;margin:0 0 25px}.legal p{line-height:1.75;color:#555}.cookie{position:fixed;left:18px;right:18px;bottom:18px;z-index:80;background:#111216;color:#fff;border-radius:17px;padding:16px 18px;display:flex;justify-content:space-between;gap:20px;align-items:center;box-shadow:0 20px 60px #0006;font-size:13px}.cookie p{margin:0;color:#d1cdc6}.cookie button{border:0;border-radius:999px;background:#fff;color:#111;padding:11px 16px;font-weight:800;white-space:nowrap}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:#111;color:#fff;border-radius:999px;padding:12px 18px;opacity:0;transition:.2s;z-index:100;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:850px){.links{display:none}.menu{display:block}.hero{padding-top:48px}.feature{height:570px}.feature-copy{left:25px;right:25px}.grid{grid-template-columns:repeat(2,1fr)}.newsletter{grid-template-columns:1fr;padding:35px}.footgrid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.logo{font-size:36px}.hero h1{font-size:52px;letter-spacing:-3px}.hero p{font-size:17px}.grid{grid-template-columns:1fr}.card-art{height:250px}.newsletter h2{font-size:39px}.form{display:block;background:none}.form input,.form button{width:100%;margin-top:7px}.footgrid{grid-template-columns:1fr}.cookie{flex-direction:column;align-items:stretch}.cookie button{align-self:flex-end}.reader-copy{padding:26px}}
+</style>
+</head>
+<body>
+<div class="bar"><span>● INSÓLITO — historias que merecen una segunda mirada.</span><span>Edición digital</span></div>
+<nav class="nav"><a class="logo" href="#inicio">INSÓ<b>LITO</b></a><div class="links"><a href="#historias">Historias</a><a href="#categorias">Categorías</a><a href="#nosotros">Nosotros</a></div><button class="menu" id="menu">☰</button></nav>
+
+<main id="inicio">
+<section class="wrap hero"><div class="eyebrow">INSÓLITO · EDICIÓN 2026</div><h1>Lo raro, lo fascinante y lo que no sabías que estaba pasando.</h1><p>Historias curiosas sobre ciencia, animales, espacio e historia. Esta versión funciona como una web estática: no necesita servidor ni archivos adicionales.</p></section>
+<div class="wrap"><div class="ad">ESPACIO PUBLICITARIO · 970 × 90</div></div>
+
+<section class="wrap"><article class="feature" id="featured"><div id="featureArt"></div><div class="shade"></div><div class="feature-copy"><span class="tag" id="featureTag">HISTORIA DESTACADA</span><h2 id="featureTitle"></h2><p id="featureDesc"></p><div class="meta" style="color:#bbb">Redacción INSÓLITO · Demo editorial · 5 min de lectura</div></div></article></section>
+
+<section class="wrap" id="historias">
+<div class="controls"><input class="search" id="search" type="search" placeholder="Buscar historias..."><div class="filters" id="categorias"><button class="filter active" data-cat="TODAS">Todas</button><button class="filter" data-cat="CIENCIA">Ciencia</button><button class="filter" data-cat="ANIMALES">Animales</button><button class="filter" data-cat="ESPACIO">Espacio</button><button class="filter" data-cat="HISTORIA">Historia</button></div></div>
+<div class="grid" id="grid"><article class="card" data-title="una segunda mirada puede encontrar algo nuevo en un archivo astronómico" data-cat="CIENCIA" data-id="0">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Una segunda mirada puede encontrar algo nuevo en un archivo astronómico">
+      <defs><linearGradient id="g-hubble" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09152b"/><stop offset=".55" stop-color="#3977b9"/><stop offset="1" stop-color="#d8f1ff"/></linearGradient>
+      <filter id="blur-hubble"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-hubble)"/>
+      <circle cx="710" cy="130" r="135" fill="#d8f1ff" opacity=".2" filter="url(#blur-hubble)"/>
+      <circle cx="150" cy="520" r="190" fill="#09152b" opacity=".55" filter="url(#blur-hubble)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#09152b" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#d8f1ff" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#d8f1ff" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">HUBBLE</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">CIENCIA</span><h3>Una segunda mirada puede encontrar algo nuevo en un archivo astronómico</h3><p>Los archivos científicos guardan observaciones que pueden volver a estudiarse cuando aparecen nuevas herramientas.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="el pulpo y la extraordinaria inteligencia de los animales sin esqueleto" data-cat="CIENCIA" data-id="1">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="El pulpo y la extraordinaria inteligencia de los animales sin esqueleto">
+      <defs><linearGradient id="g-pulpo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35133e"/><stop offset=".55" stop-color="#a34d8f"/><stop offset="1" stop-color="#f2b8d6"/></linearGradient>
+      <filter id="blur-pulpo"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-pulpo)"/>
+      <circle cx="710" cy="130" r="135" fill="#f2b8d6" opacity=".2" filter="url(#blur-pulpo)"/>
+      <circle cx="150" cy="520" r="190" fill="#35133e" opacity=".55" filter="url(#blur-pulpo)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#35133e" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#f2b8d6" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#f2b8d6" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">PULPO</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">CIENCIA</span><h3>El pulpo y la extraordinaria inteligencia de los animales sin esqueleto</h3><p>Aprendizaje, exploración y resolución de problemas hacen de los cefalópodos un tema fascinante.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="la postura imposible con la que los flamencos descansan" data-cat="ANIMALES" data-id="2">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="La postura imposible con la que los flamencos descansan">
+      <defs><linearGradient id="g-flamenco" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183a35"/><stop offset=".55" stop-color="#d1a33f"/><stop offset="1" stop-color="#e9e0a6"/></linearGradient>
+      <filter id="blur-flamenco"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-flamenco)"/>
+      <circle cx="710" cy="130" r="135" fill="#e9e0a6" opacity=".2" filter="url(#blur-flamenco)"/>
+      <circle cx="150" cy="520" r="190" fill="#183a35" opacity=".55" filter="url(#blur-flamenco)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#183a35" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#e9e0a6" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#e9e0a6" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">FLAMENCO</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">ANIMALES</span><h3>La postura imposible con la que los flamencos descansan</h3><p>Su anatomía permite mantener una postura que a nosotros nos resultaría muy poco natural.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="cuando una estrella se acerca demasiado a un agujero negro" data-cat="ESPACIO" data-id="3">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Cuando una estrella se acerca demasiado a un agujero negro">
+      <defs><linearGradient id="g-agujero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090811"/><stop offset=".55" stop-color="#542878"/><stop offset="1" stop-color="#ff8050"/></linearGradient>
+      <filter id="blur-agujero"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-agujero)"/>
+      <circle cx="710" cy="130" r="135" fill="#ff8050" opacity=".2" filter="url(#blur-agujero)"/>
+      <circle cx="150" cy="520" r="190" fill="#090811" opacity=".55" filter="url(#blur-agujero)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#090811" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#ff8050" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#ff8050" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">AGUJERO</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">ESPACIO</span><h3>Cuando una estrella se acerca demasiado a un agujero negro</h3><p>Las fuerzas de marea pueden deformar una estrella en uno de los fenómenos más extremos del universo.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="los mapas antiguos también cuentan historias sobre lo que la gente creía saber" data-cat="HISTORIA" data-id="4">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Los mapas antiguos también cuentan historias sobre lo que la gente creía saber">
+      <defs><linearGradient id="g-mapa" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#46321e"/><stop offset=".55" stop-color="#b88651"/><stop offset="1" stop-color="#e8d4a7"/></linearGradient>
+      <filter id="blur-mapa"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-mapa)"/>
+      <circle cx="710" cy="130" r="135" fill="#e8d4a7" opacity=".2" filter="url(#blur-mapa)"/>
+      <circle cx="150" cy="520" r="190" fill="#46321e" opacity=".55" filter="url(#blur-mapa)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#46321e" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#e8d4a7" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#e8d4a7" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">MAPA</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">HISTORIA</span><h3>Los mapas antiguos también cuentan historias sobre lo que la gente creía saber</h3><p>Un mapa no solo representa lugares: también conserva las certezas, dudas y errores de su época.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="las rocas espaciales que conservan pistas del sistema solar primitivo" data-cat="ESPACIO" data-id="5">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Las rocas espaciales que conservan pistas del Sistema Solar primitivo">
+      <defs><linearGradient id="g-meteorito" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#281a18"/><stop offset=".55" stop-color="#b75a3c"/><stop offset="1" stop-color="#f2c18b"/></linearGradient>
+      <filter id="blur-meteorito"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-meteorito)"/>
+      <circle cx="710" cy="130" r="135" fill="#f2c18b" opacity=".2" filter="url(#blur-meteorito)"/>
+      <circle cx="150" cy="520" r="190" fill="#281a18" opacity=".55" filter="url(#blur-meteorito)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#281a18" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#f2c18b" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#f2c18b" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">METEORITO</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">ESPACIO</span><h3>Las rocas espaciales que conservan pistas del Sistema Solar primitivo</h3><p>Algunos meteoritos conservan materiales extremadamente antiguos y ayudan a estudiar nuestros orígenes.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="los murciélagos no son ciegos: la ecolocalización es otra de sus herramientas" data-cat="ANIMALES" data-id="6">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Los murciélagos no son ciegos: la ecolocalización es otra de sus herramientas">
+      <defs><linearGradient id="g-murcielago" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#171328"/><stop offset=".55" stop-color="#574c82"/><stop offset="1" stop-color="#c4a9ec"/></linearGradient>
+      <filter id="blur-murcielago"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-murcielago)"/>
+      <circle cx="710" cy="130" r="135" fill="#c4a9ec" opacity=".2" filter="url(#blur-murcielago)"/>
+      <circle cx="150" cy="520" r="190" fill="#171328" opacity=".55" filter="url(#blur-murcielago)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#171328" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#c4a9ec" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#c4a9ec" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">MURCIELAGO</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">ANIMALES</span><h3>Los murciélagos no son ciegos: la ecolocalización es otra de sus herramientas</h3><p>Muchas especies usan sonidos para orientarse, pero eso no significa que carezcan de visión.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="cómo se descubre un planeta que nadie puede ver directamente" data-cat="CIENCIA" data-id="7">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Cómo se descubre un planeta que nadie puede ver directamente">
+      <defs><linearGradient id="g-planeta" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1e2e"/><stop offset=".55" stop-color="#31768d"/><stop offset="1" stop-color="#e8cb79"/></linearGradient>
+      <filter id="blur-planeta"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-planeta)"/>
+      <circle cx="710" cy="130" r="135" fill="#e8cb79" opacity=".2" filter="url(#blur-planeta)"/>
+      <circle cx="150" cy="520" r="190" fill="#0b1e2e" opacity=".55" filter="url(#blur-planeta)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#0b1e2e" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#e8cb79" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#e8cb79" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">PLANETA</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">CIENCIA</span><h3>Cómo se descubre un planeta que nadie puede ver directamente</h3><p>Los astrónomos pueden detectar mundos lejanos midiendo efectos diminutos sobre sus estrellas.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article><article class="card" data-title="las auroras son una conversación entre el sol y la atmósfera" data-cat="ESPACIO" data-id="8">
+      <div class="card-art"><svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Las auroras son una conversación entre el Sol y la atmósfera">
+      <defs><linearGradient id="g-aurora" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071c23"/><stop offset=".55" stop-color="#2b8b76"/><stop offset="1" stop-color="#d7f3bc"/></linearGradient>
+      <filter id="blur-aurora"><feGaussianBlur stdDeviation="35"/></filter></defs>
+      <rect width="900" height="620" fill="url(#g-aurora)"/>
+      <circle cx="710" cy="130" r="135" fill="#d7f3bc" opacity=".2" filter="url(#blur-aurora)"/>
+      <circle cx="150" cy="520" r="190" fill="#071c23" opacity=".55" filter="url(#blur-aurora)"/>
+      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#071c23" opacity=".7"/>
+      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#d7f3bc" stroke-width="3" opacity=".5"/>
+      <text x="48" y="566" fill="#d7f3bc" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">AURORA</text>
+    </svg></div>
+      <div class="card-body"><span class="tag">ESPACIO</span><h3>Las auroras son una conversación entre el Sol y la atmósfera</h3><p>Partículas energéticas y el campo magnético terrestre producen uno de los espectáculos naturales más conocidos.</p><div class="meta">5 min de lectura · Demo editorial</div></div>
+    </article></div>
+<p id="empty" style="display:none;color:#777;padding:30px 0">No encontramos historias con ese criterio.</p>
+</section>
+
+<section class="wrap"><div class="newsletter"><div><div class="eyebrow">LA CARTA DE INSÓLITO</div><h2>Una dosis de rareza, directamente en tu correo.</h2></div><div><p>Formulario de demostración. Esta página no envía ni almacena correos.</p><form class="form" id="newsletter"><input type="email" required placeholder="tu@email.com" aria-label="Correo"><button>Suscribirme</button></form></div></div></section>
+</main>
+
+<footer id="nosotros"><div class="wrap"><div class="footgrid"><div><div class="logo">INSÓ<b>LITO</b></div><p>Historias curiosas contadas con contexto y referencias.</p></div><div><strong>Explora</strong><a href="#historias">Historias</a><a href="#categorias">Categorías</a></div><div><strong>Proyecto</strong><a href="#" data-page="about">Sobre INSÓLITO</a><a href="#" data-page="contact">Contacto</a><a href="#" data-page="ads">Publicidad</a></div><div><strong>Legal</strong><a href="#" data-page="privacy">Privacidad</a><a href="#" data-page="cookies">Cookies</a><a href="#" data-page="terms">Términos</a></div></div><div class="copy">© 2026 INSÓLITO · Plantilla editorial. Las historias de esta demo están identificadas como material editorial de demostración.</div></div></footer>
+
+<div class="overlay" id="storyOverlay"><article class="reader"><button class="close" id="storyClose">×</button><div class="reader-art" id="readerArt"></div><div class="reader-copy"><span class="tag" id="readerTag"></span><h2 id="readerTitle"></h2><div class="meta">Redacción INSÓLITO · Demo editorial · 5 min de lectura</div><p class="lead" id="readerLead"></p><p>Esta página incluye una estructura de artículo real: titular, entradilla, cuerpo, referencia y enlace de origen. Las publicaciones de esta demostración no deben presentarse como noticias verificadas hasta incorporar la fuente concreta, fecha y comprobación editorial.</p><p>El diseño está preparado para que después puedas sustituir estos textos por tus propias publicaciones sin cambiar la estructura de la web.</p><div class="source" id="readerSource"></div></div></article></div>
+
+<div class="overlay" id="pageOverlay"><article class="reader"><button class="close" id="pageClose">×</button><div class="legal"><div class="eyebrow">INSÓLITO</div><h2 id="pageTitle"></h2><div id="pageBody"></div></div></article></div>
+
+<div class="cookie" id="cookie"><p>Esta demo usa únicamente almacenamiento local para recordar que aceptaste este aviso. No hay cuentas ni base de datos.</p><button id="cookieOk">Entendido</button></div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+const STORIES=[{kind:"hubble",cat:"CIENCIA",title:"Una segunda mirada puede encontrar algo nuevo en un archivo astronómico",desc:"Los archivos científicos guardan observaciones que pueden volver a estudiarse cuando aparecen nuevas herramientas.",source:"NASA — Hubble Space Telescope",url:"https://science.nasa.gov/mission/hubble/"},{kind:"pulpo",cat:"CIENCIA",title:"El pulpo y la extraordinaria inteligencia de los animales sin esqueleto",desc:"Aprendizaje, exploración y resolución de problemas hacen de los cefalópodos un tema fascinante.",source:"Smithsonian Ocean — Octopus",url:"https://ocean.si.edu/ocean-life/invertebrates/octopus"},{kind:"flamenco",cat:"ANIMALES",title:"La postura imposible con la que los flamencos descansan",desc:"Su anatomía permite mantener una postura que a nosotros nos resultaría muy poco natural.",source:"San Diego Zoo — Flamingo",url:"https://animals.sandiegozoo.org/animals/flamingo"},{kind:"agujero",cat:"ESPACIO",title:"Cuando una estrella se acerca demasiado a un agujero negro",desc:"Las fuerzas de marea pueden deformar una estrella en uno de los fenómenos más extremos del universo.",source:"NASA — Black Holes",url:"https://science.nasa.gov/universe/black-holes/"},{kind:"mapa",cat:"HISTORIA",title:"Los mapas antiguos también cuentan historias sobre lo que la gente creía saber",desc:"Un mapa no solo representa lugares: también conserva las certezas, dudas y errores de su época.",source:"Library of Congress — Maps",url:"https://www.loc.gov/maps/"},{kind:"meteorito",cat:"ESPACIO",title:"Las rocas espaciales que conservan pistas del Sistema Solar primitivo",desc:"Algunos meteoritos conservan materiales extremadamente antiguos y ayudan a estudiar nuestros orígenes.",source:"NASA — Solar System Exploration",url:"https://science.nasa.gov/solar-system/"},{kind:"murcielago",cat:"ANIMALES",title:"Los murciélagos no son ciegos: la ecolocalización es otra de sus herramientas",desc:"Muchas especies usan sonidos para orientarse, pero eso no significa que carezcan de visión.",source:"Smithsonian's National Zoo — Bats",url:"https://nationalzoo.si.edu/animals/bats"},{kind:"planeta",cat:"CIENCIA",title:"Cómo se descubre un planeta que nadie puede ver directamente",desc:"Los astrónomos pueden detectar mundos lejanos midiendo efectos diminutos sobre sus estrellas.",source:"NASA Exoplanet Exploration",url:"https://science.nasa.gov/exoplanets/"},{kind:"aurora",cat:"ESPACIO",title:"Las auroras son una conversación entre el Sol y la atmósfera",desc:"Partículas energéticas y el campo magnético terrestre producen uno de los espectáculos naturales más conocidos.",source:"NOAA Space Weather Prediction Center",url:"https://www.swpc.noaa.gov/phenomena/aurora"}];
+const feature=STORIES[0];
+const featureArt=document.getElementById("featureArt");
+featureArt.innerHTML='<svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Una segunda mirada puede encontrar algo nuevo en un archivo astronómico">\n      <defs><linearGradient id="g-hubble" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09152b"/><stop offset=".55" stop-color="#3977b9"/><stop offset="1" stop-color="#d8f1ff"/></linearGradient>\n      <filter id="blur-hubble"><feGaussianBlur stdDeviation="35"/></filter></defs>\n      <rect width="900" height="620" fill="url(#g-hubble)"/>\n      <circle cx="710" cy="130" r="135" fill="#d8f1ff" opacity=".2" filter="url(#blur-hubble)"/>\n      <circle cx="150" cy="520" r="190" fill="#09152b" opacity=".55" filter="url(#blur-hubble)"/>\n      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#09152b" opacity=".7"/>\n      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#d8f1ff" stroke-width="3" opacity=".5"/>\n      <text x="48" y="566" fill="#d8f1ff" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">HUBBLE</text>\n    </svg>';
+document.getElementById("featureTitle").textContent=feature.title;
+document.getElementById("featureDesc").textContent=feature.desc;
+document.getElementById("featureTag").textContent="HISTORIA DESTACADA · "+feature.cat;
+
+const grid=document.getElementById("grid"), empty=document.getElementById("empty"), search=document.getElementById("search");
+let active="TODAS";
+function render(){
+  const q=search.value.trim().toLowerCase();
+  let n=0;
+  grid.querySelectorAll(".card").forEach(card=>{
+    const okCat=active==="TODAS"||card.dataset.cat===active;
+    const okText=!q||card.dataset.title.includes(q);
+    card.style.display=okCat&&okText?"block":"none";
+    if(okCat&&okText)n++;
+  });
+  empty.style.display=n?"none":"block";
+}
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active"); active=btn.dataset.cat; render();
+}));
+search.addEventListener("input",render);
+
+function openStory(i){
+  const s=STORIES[i];
+  document.getElementById("readerArt").innerHTML='<svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="">\n      <defs><linearGradient id="g-hubble" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09152b"/><stop offset=".55" stop-color="#3977b9"/><stop offset="1" stop-color="#d8f1ff"/></linearGradient>\n      <filter id="blur-hubble"><feGaussianBlur stdDeviation="35"/></filter></defs>\n      <rect width="900" height="620" fill="url(#g-hubble)"/>\n      <circle cx="710" cy="130" r="135" fill="#d8f1ff" opacity=".2" filter="url(#blur-hubble)"/>\n      <circle cx="150" cy="520" r="190" fill="#09152b" opacity=".55" filter="url(#blur-hubble)"/>\n      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#09152b" opacity=".7"/>\n      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#d8f1ff" stroke-width="3" opacity=".5"/>\n      <text x="48" y="566" fill="#d8f1ff" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">HUBBLE</text>\n    </svg>';
+  document.getElementById("readerArt").innerHTML='<svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice" aria-label="Una segunda mirada puede encontrar algo nuevo en un archivo astronómico">\n      <defs><linearGradient id="g-hubble" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09152b"/><stop offset=".55" stop-color="#3977b9"/><stop offset="1" stop-color="#d8f1ff"/></linearGradient>\n      <filter id="blur-hubble"><feGaussianBlur stdDeviation="35"/></filter></defs>\n      <rect width="900" height="620" fill="url(#g-hubble)"/>\n      <circle cx="710" cy="130" r="135" fill="#d8f1ff" opacity=".2" filter="url(#blur-hubble)"/>\n      <circle cx="150" cy="520" r="190" fill="#09152b" opacity=".55" filter="url(#blur-hubble)"/>\n      <path d="M0 480 C170 390 260 570 420 465 S700 380 900 485 V620 H0Z" fill="#09152b" opacity=".7"/>\n      <path d="M80 115 Q230 45 390 115 T820 115 M120 175 Q300 100 475 180 T850 170" fill="none" stroke="#d8f1ff" stroke-width="3" opacity=".5"/>\n      <text x="48" y="566" fill="#d8f1ff" opacity=".45" font-family="Georgia,serif" font-size="18" letter-spacing="4">HUBBLE</text>\n    </svg>';
+  document.getElementById("readerTag").textContent=s.cat+" · DEMO EDITORIAL";
+  document.getElementById("readerTitle").textContent=s.title;
+  document.getElementById("readerLead").textContent=s.desc;
+  document.getElementById("readerSource").innerHTML='Fuente / referencia: <a href="'+s.url+'" target="_blank" rel="noopener noreferrer">'+s.source+'</a>';
+  document.getElementById("storyOverlay").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+grid.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openStory(Number(c.dataset.id))});
+document.getElementById("featured").addEventListener("click",()=>openStory(0));
+document.getElementById("storyClose").onclick=()=>{document.getElementById("storyOverlay").classList.remove("open");document.body.style.overflow=""};
+
+const pages={
+about:["Sobre INSÓLITO","<p>INSÓLITO es un concepto de medio digital dedicado a historias curiosas, ciencia, animales, espacio e historia.</p><p>Las publicaciones marcadas como demo sirven para mostrar el funcionamiento de la web y no deben presentarse como hechos periodísticos verificados sin añadir la investigación correspondiente.</p>"],
+contact:["Contacto","<p>En una versión pública real, sustituye esta sección por el correo oficial del proyecto y un canal para correcciones, prensa y derechos.</p>"],
+ads:["Publicidad","<p>Los espacios publicitarios están claramente identificados. La publicidad no debe confundirse con el contenido editorial.</p>"],
+privacy:["Política de privacidad","<p>Esta versión estática no tiene cuentas, base de datos ni servidor propio. El formulario de newsletter es demostrativo y no envía datos.</p><p>Si posteriormente añades analítica, publicidad, comentarios o formularios, deberás actualizar esta política para explicar los datos tratados y los derechos aplicables.</p>"],
+cookies:["Política de cookies","<p>La demo solo puede usar almacenamiento local para preferencias del navegador. Si añades servicios de terceros, deberás actualizar esta política y el mecanismo de consentimiento según corresponda.</p>"],
+terms:["Términos y condiciones","<p>Esta plantilla es una base editorial. Comprueba siempre las fuentes, fechas, contexto y derechos de las imágenes antes de publicar una noticia.</p><p>Este texto es informativo y no constituye asesoramiento jurídico.</p>"]
+};
+document.querySelectorAll("[data-page]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const p=pages[a.dataset.page];document.getElementById("pageTitle").textContent=p[0];document.getElementById("pageBody").innerHTML=p[1];document.getElementById("pageOverlay").classList.add("open");document.body.style.overflow="hidden"}));
+document.getElementById("pageClose").onclick=()=>{document.getElementById("pageOverlay").classList.remove("open");document.body.style.overflow=""};
+document.getElementById("newsletter").addEventListener("submit",e=>{e.preventDefault();e.target.reset();const t=document.getElementById("toast");t.textContent="Formulario de demostración: no se ha enviado ningún correo.";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500)});
+document.getElementById("cookieOk").onclick=()=>{document.getElementById("cookie").style.display="none";try{localStorage.setItem("insolito_cookie","ok")}catch(e){}};
+try{if(localStorage.getItem("insolito_cookie")==="ok")document.getElementById("cookie").style.display="none"}catch(e){}
+document.getElementById("menu").onclick=()=>alert("En esta versión móvil, usa los enlaces de la página para navegar.");
+</script>
+</body>
+</html>
