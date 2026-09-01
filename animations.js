@@ -1,24 +1,19 @@
-/* CRÓNICAS ANÓMALAS · animations.js */
+/* CRÓNICAS ANÓMALAS · animations.js · motion is progressive enhancement only */
 "use strict";
 
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function animateModal(open, writeHistory = true) {
+  const modalWindow = document.querySelector(".modal__window");
+  if (!modalWindow) return;
   if (!window.gsap || reduceMotion) {
     if (!open) window.finishClose?.(writeHistory);
     return;
   }
-
   if (open) {
-    gsap.fromTo(".modal__window",
-      { y: 28, opacity: 0, scale: .985 },
-      { y: 0, opacity: 1, scale: 1, duration: .36, ease: "power3.out" }
-    );
+    gsap.fromTo(modalWindow, { y: 18, scale: .99 }, { y: 0, scale: 1, duration: .28, ease: "power3.out", clearProps: "transform" });
   } else {
-    gsap.to(".modal__window", {
-      y: 16, opacity: 0, duration: .2, ease: "power2.in",
-      onComplete: () => window.finishClose?.(writeHistory)
-    });
+    gsap.to(modalWindow, { y: 12, duration: .18, ease: "power2.in", onComplete: () => window.finishClose?.(writeHistory) });
   }
 }
 window.animateModal = animateModal;
@@ -26,16 +21,11 @@ window.animateModal = animateModal;
 function refreshArchiveAnimations() {
   if (!window.gsap || !window.ScrollTrigger || reduceMotion) return;
   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
   gsap.utils.toArray(".card:not(.is-hidden)").forEach((card, index) => {
-    gsap.fromTo(card,
-      { opacity: 0, y: 22 },
-      {
-        opacity: 1, y: 0, duration: .5, delay: Math.min(index * .035, .16),
-        ease: "power3.out",
-        scrollTrigger: { trigger: card, start: "top 90%", once: true }
-      }
-    );
+    gsap.fromTo(card, { y: 18 }, {
+      y: 0, duration: .45, delay: Math.min(index * .035, .14), ease: "power3.out", clearProps: "transform",
+      scrollTrigger: { trigger: card, start: "top 92%", once: true }
+    });
   });
   ScrollTrigger.refresh();
 }
@@ -47,18 +37,17 @@ function initMotion() {
 
   const hero = document.querySelector(".hero-card");
   if (hero) {
-    gsap.fromTo(hero, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .7, ease: "power3.out" });
-    gsap.fromTo(".hero-copy > *", { opacity: 0, y: 12 }, {
-      opacity: 1, y: 0, stagger: .05, duration: .45, delay: .15, ease: "power3.out"
-    });
+    gsap.fromTo(hero, { y: 18 }, { y: 0, duration: .6, ease: "power3.out", clearProps: "transform" });
+    gsap.fromTo(".hero-copy > *", { y: 8 }, { y: 0, stagger: .045, duration: .35, delay: .12, ease: "power3.out", clearProps: "transform" });
   }
 
   if (window.ScrollTrigger) {
-    gsap.fromTo(".archive-heading", { opacity: 0, y: 18 }, {
-      opacity: 1, y: 0, duration: .55, ease: "power3.out",
-      scrollTrigger: { trigger: ".archive-heading", start: "top 90%", once: true }
+    gsap.fromTo(".archive-heading", { y: 12 }, {
+      y: 0, duration: .45, ease: "power3.out", clearProps: "transform",
+      scrollTrigger: { trigger: ".archive-heading", start: "top 92%", once: true }
     });
     refreshArchiveAnimations();
   }
 }
+
 document.addEventListener("DOMContentLoaded", initMotion);

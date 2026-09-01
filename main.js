@@ -124,6 +124,8 @@ function finishClose(writeHistory = true) {
   state.lastFocus?.focus?.();
 }
 
+window.finishClose = finishClose;
+
 function closeModal(writeHistory = true) {
   if (!modal?.classList.contains("is-open")) return;
   if (window.animateModal) window.animateModal(false, writeHistory);
