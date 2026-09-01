@@ -1,53 +1,84 @@
-/* CRÓNICAS ANÓMALAS · animations.js · motion is progressive enhancement only */
+/* CRÓNICAS ANÓMALAS · animations.js
+   Capa opcional: si GSAP no carga, nada queda oculto.
+*/
 "use strict";
 
-const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-function animateModal(open, writeHistory = true) {
+function finishModalClose(updateHistory) {
+  if (typeof window.__finishModalClose === "function") {
+    window.__finishModalClose(updateHistory);
+  }
+}
+
+window.animateModal = function animateModal(open, updateHistory = true) {
   const modalWindow = document.querySelector(".modal__window");
   if (!modalWindow) return;
-  if (!window.gsap || reduceMotion) {
-    if (!open) window.finishClose?.(writeHistory);
+
+  // The modal is always visible through CSS when open.
+  // GSAP only adds a transform/opacity animation after the open state exists.
+  if (open && window.gsap && !reducedMotion) {
+    gsap.fromTo(
+      modalWindow,
+      { y: 18, scale: 0.99 },
+      { y: 0, scale: 1, duration: 0.28, ease: "power3.out", overwrite: true }
+    );
     return;
   }
-  if (open) {
-    gsap.fromTo(modalWindow, { y: 18, scale: .99 }, { y: 0, scale: 1, duration: .28, ease: "power3.out", clearProps: "transform" });
-  } else {
-    gsap.to(modalWindow, { y: 12, duration: .18, ease: "power2.in", onComplete: () => window.finishClose?.(writeHistory) });
-  }
-}
-window.animateModal = animateModal;
 
-function refreshArchiveAnimations() {
-  if (!window.gsap || !window.ScrollTrigger || reduceMotion) return;
-  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  gsap.utils.toArray(".card:not(.is-hidden)").forEach((card, index) => {
-    gsap.fromTo(card, { y: 18 }, {
-      y: 0, duration: .45, delay: Math.min(index * .035, .14), ease: "power3.out", clearProps: "transform",
-      scrollTrigger: { trigger: card, start: "top 92%", once: true }
+  if (!open && window.gsap && !reducedMotion) {
+    gsap.to(modalWindow, {
+      y: 12,
+      duration: 0.16,
+      ease: "power2.in",
+      overwrite: true,
+      onComplete: () => finishModalClose(updateHistory)
     });
-  });
-  ScrollTrigger.refresh();
-}
-window.refreshArchiveAnimations = refreshArchiveAnimations;
+    return;
+  }
 
-function initMotion() {
-  if (!window.gsap || reduceMotion) return;
-  if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+  if (!open) finishModalClose(updateHistory);
+};
+
+window.refreshArchiveAnimations = function refreshArchiveAnimations() {
+  if (!window.gsap || !window.ScrollTrigger || reducedMotion) return;
+
+  // Never set opacity to 0. Content is visible even if an animation is interrupted.
+  gsap.utils.toArray(".card:not(.is-hidden)").forEach((card) => {
+    gsap.fromTo(
+      card,
+      { y: 12 },
+      { y: 0, duration: 0.32, ease: "power2.out", overwrite: true,
+        scrollTrigger: { trigger: card, start: "top 92%", once: true } }
+    );
+  });
+
+  window.ScrollTrigger.refresh();
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!window.gsap || reducedMotion) return;
 
   const hero = document.querySelector(".hero-card");
   if (hero) {
-    gsap.fromTo(hero, { y: 18 }, { y: 0, duration: .6, ease: "power3.out", clearProps: "transform" });
-    gsap.fromTo(".hero-copy > *", { y: 8 }, { y: 0, stagger: .045, duration: .35, delay: .12, ease: "power3.out", clearProps: "transform" });
+    gsap.fromTo(
+      hero,
+      { y: 12 },
+      { y: 0, duration: 0.42, ease: "power3.out", overwrite: true }
+    );
   }
 
   if (window.ScrollTrigger) {
-    gsap.fromTo(".archive-heading", { y: 12 }, {
-      y: 0, duration: .45, ease: "power3.out", clearProps: "transform",
-      scrollTrigger: { trigger: ".archive-heading", start: "top 92%", once: true }
-    });
-    refreshArchiveAnimations();
+    gsap.registerPlugin(ScrollTrigger);
+    const heading = document.querySelector(".archive-heading");
+    if (heading) {
+      gsap.fromTo(
+        heading,
+        { y: 10 },
+        { y: 0, duration: 0.35, ease: "power2.out",
+          scrollTrigger: { trigger: heading, start: "top 92%", once: true } }
+      );
+    }
+    window.refreshArchiveAnimations();
   }
-}
-
-document.addEventListener("DOMContentLoaded", initMotion);
+});

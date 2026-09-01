@@ -32,3 +32,5 @@ body.modal-open{overflow:hidden}img{display:block;max-width:100%}button{font:inh
 /* Resilient media fallback */
 .hero-media img[src=""], .card__media img[src=""], .modal__image img[src=""] { display:none; }
 .hero-media:has(img[src=""]), .card__media:has(img[src=""]) { background: linear-gradient(135deg, var(--surface-2), var(--bg)); }
+
+/* Fail-safe: JavaScript/GSAP can never be required for visibility. */
