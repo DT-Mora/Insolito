@@ -1,193 +1,38 @@
-/* =========================================================
-   CRÓNICAS ANÓMALAS
-   GSAP + ScrollTrigger animations
-========================================================= */
+/* CRÓNICAS ANÓMALAS · motion */
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let gsapReady=false;
 
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-function canAnimate() {
-  return (
-    !reducedMotion &&
-    typeof window.gsap !== "undefined" &&
-    typeof window.ScrollTrigger !== "undefined"
-  );
-}
-
-function initHeroAnimation() {
-  if (!canAnimate()) return;
-
-  const hero = document.querySelector(".hero-card");
-  if (!hero) return;
-
-  const image = hero.querySelector(".hero-card__image-wrap");
-  const content = hero.querySelector(".hero-card__content");
-
-  const timeline = gsap.timeline({
-    defaults: { ease: "power3.out" }
-  });
-
-  timeline.fromTo(
-    hero,
-    { opacity: 0, y: 36 },
-    { opacity: 1, y: 0, duration: .75 }
-  );
-
-  if (image) {
-    timeline.fromTo(
-      image,
-      { clipPath: "inset(0 100% 0 0)" },
-      { clipPath: "inset(0 0% 0 0)", duration: .9 },
-      "-=.5"
-    );
-  }
-
-  if (content) {
-    timeline.fromTo(
-      content.children,
-      { opacity: 0, y: 18 },
-      { opacity: 1, y: 0, stagger: .07, duration: .55 },
-      "-=.65"
-    );
+function animateModal(open){
+  if(!window.gsap||reduce){if(!open)finishClose();return}
+  if(open){
+    gsap.fromTo(".modal__window",{y:30,opacity:0,scale:.985},{y:0,opacity:1,scale:1,duration:.38,ease:"power3.out"});
+  }else{
+    gsap.to(".modal__window",{y:16,opacity:0,duration:.2,ease:"power2.in",onComplete:finishClose});
   }
 }
+window.animateModal=animateModal;
 
-function initHeadingAnimation() {
-  if (!canAnimate()) return;
-
-  const heading = document.querySelector(".section-heading");
-  if (!heading) return;
-
-  gsap.fromTo(
-    heading,
-    { opacity: 0, y: 24 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: .65,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: heading,
-        start: "top 90%",
-        toggleActions: "play none none reverse"
-      }
-    }
-  );
-}
-
-function initCardAnimations() {
-  if (!canAnimate()) return;
-
-  gsap.utils.toArray(".news-card").forEach((card, index) => {
-    gsap.fromTo(
-      card,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: .65,
-        delay: Math.min(index * .04, .2),
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 88%",
-          toggleActions: "play none none reverse",
-          once: true
-        }
-      }
-    );
+function refreshArchiveAnimations(){
+  if(!window.gsap||!window.ScrollTrigger||reduce)return;
+  ScrollTrigger.getAll().forEach(t=>t.kill());
+  gsap.utils.toArray(".card").forEach((card,i)=>{
+    if(card.classList.contains("is-hidden"))return;
+    gsap.fromTo(card,{opacity:0,y:28},{opacity:1,y:0,duration:.55,delay:Math.min(i*.035,.18),ease:"power3.out",
+      scrollTrigger:{trigger:card,start:"top 90%",toggleActions:"play none none reverse"}});
   });
+  ScrollTrigger.refresh();
 }
+window.refreshArchiveAnimations=refreshArchiveAnimations;
 
-function initFooterAnimation() {
-  if (!canAnimate()) return;
-
-  const footer = document.querySelector(".site-footer");
-  const main = footer?.querySelector(".site-footer__main");
-  if (!main) return;
-
-  gsap.fromTo(
-    main,
-    { opacity: 0, y: 24 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: .8,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: footer,
-        start: "top 92%",
-        toggleActions: "play none none reverse"
-      }
-    }
-  );
-}
-
-function initMicroInteractions() {
-  if (!canAnimate()) return;
-
-  document.querySelectorAll(
-    ".read-button, .card-link, .quote-card__trigger, .archive-list__row button"
-  ).forEach((element) => {
-    element.addEventListener("mouseenter", () => {
-      gsap.to(element, {
-        y: -2,
-        duration: .18,
-        ease: "power2.out",
-        overwrite: true
-      });
-    });
-
-    element.addEventListener("mouseleave", () => {
-      gsap.to(element, {
-        y: 0,
-        duration: .22,
-        ease: "power2.out",
-        overwrite: true
-      });
-    });
-  });
-}
-
-function initListViewAnimation() {
-  if (!canAnimate()) return;
-
-  document.querySelectorAll("[data-layout]").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.dataset.layout !== "list") return;
-
-      gsap.fromTo(
-        "#listView",
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: .35, ease: "power3.out" }
-      );
-    });
-  });
-}
-
-function refreshArchiveAnimations() {
-  if (typeof window.ScrollTrigger !== "undefined") {
-    ScrollTrigger.refresh();
-  }
-}
-
-function initAnimations() {
-  if (!canAnimate()) {
-    window.refreshArchiveAnimations = refreshArchiveAnimations;
-    return;
-  }
-
+function initMotion(){
+  if(!window.gsap||!window.ScrollTrigger||reduce)return;
   gsap.registerPlugin(ScrollTrigger);
-
-  initHeroAnimation();
-  initHeadingAnimation();
-  initCardAnimations();
-  initFooterAnimation();
-  initMicroInteractions();
-  initListViewAnimation();
-
-  window.refreshArchiveAnimations = refreshArchiveAnimations;
-
-  requestAnimationFrame(() => ScrollTrigger.refresh());
+  const hero=document.querySelector(".hero-card");
+  if(hero){
+    gsap.fromTo(hero,{opacity:0,y:28},{opacity:1,y:0,duration:.7,ease:"power3.out"});
+    gsap.fromTo(".hero-copy>*",{opacity:0,y:14},{opacity:1,y:0,stagger:.06,duration:.5,delay:.18,ease:"power3.out"});
+  }
+  gsap.fromTo(".archive-heading",{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:"power3.out",scrollTrigger:{trigger:".archive-heading",start:"top 90%"}});
+  refreshArchiveAnimations();
 }
-
-document.addEventListener("DOMContentLoaded", initAnimations);
+document.addEventListener("DOMContentLoaded",()=>setTimeout(initMotion,120));
