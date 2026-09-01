@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CRÓNICAS ANÓMALAS. Archivo editorial de hechos extraños, fenómenos documentados y preguntas que todavía no tienen una respuesta cerrada.">
+  <meta name="theme-color" content="#0d0d0e">
+  <link rel="canonical" href="https://dt-mora.github.io/Insolito/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CRÓNICAS ANÓMALAS — Archivo de lo Insólito">
+  <meta property="og:description" content="Hechos extraños. Fuentes consultables. Cero humo.">
+  <meta property="og:url" content="https://dt-mora.github.io/Insolito/">
+  <title>CRÓNICAS ANÓMALAS — Archivo de lo Insólito</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="animations.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<div class="site-frame">
+  <header class="header">
+    <div class="header__top">
+      <a class="brand" href="./" aria-label="Crónicas Anómalas, inicio">
+        <span class="brand__symbol">CA</span>
+        <span class="brand__name">CRÓNICAS<br><b>ANÓMALAS</b></span>
+      </a>
+
+      <div class="live"><i></i><span>ARCHIVO ACTIVO</span></div>
+
+      <div class="header__actions">
+        <div class="layout-switch" role="group" aria-label="Vista del archivo">
+          <button class="layout-btn is-active" data-layout="grid" aria-pressed="true">GRID</button>
+          <button class="layout-btn" data-layout="list" aria-pressed="false">LISTA</button>
+        </div>
+        <button class="theme-btn" id="themeToggle" aria-label="Cambiar tema">◐</button>
+      </div>
+    </div>
+
+    <div class="header__rule">
+      <div class="issue">N.º 001 <span>·</span> EDICIÓN DIGITAL</div>
+      <div class="ticker">HECHOS EXTRAÑOS · FENÓMENOS REALES · FUENTES CONSULTABLES</div>
+      <time id="currentDate"></time>
+    </div>
+  </header>
+
+  <nav class="filters" aria-label="Categorías">
+    <button class="filter is-active" data-filter="all">#TODAS</button>
+    <button class="filter" data-filter="ciencia">#CIENCIA_RARA</button>
+    <button class="filter" data-filter="naturaleza">#NATURALEZA</button>
+    <button class="filter" data-filter="historia">#HISTORIA_OCULTA</button>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="section-label"><span>01</span> LA ANOMALÍA DEL MES</div>
+      <article class="hero-card" data-article-id="socotra" tabindex="0">
+        <div class="hero-media">
+          <img id="heroImage" src="" alt="" width="1600" height="1000" fetchpriority="high">
+          <div class="hero-overlay"></div>
+          <div class="hero-stamp">EXP-2026</div>
+        </div>
+        <div class="hero-copy">
+          <div class="verified"><i></i> DOCUMENTADO · FUENTES CONSULTABLES</div>
+          <div class="hero-meta"><span id="heroCategory"></span><span id="heroRead"></span><span id="heroRarity"></span></div>
+          <h1 id="heroTitle"></h1>
+          <p id="heroDeck"></p>
+          <div class="hero-bottom">
+            <span id="heroLocation"></span>
+            <button class="open-btn" data-open-article="socotra">ABRIR EXPEDIENTE <b>↗</b></button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="archive" aria-labelledby="archiveTitle">
+      <div class="archive-heading">
+        <div><span>02</span><h2 id="archiveTitle">ARCHIVO <em>RECIENTE</em></h2></div>
+        <p>Casos seleccionados.<br>Fuentes visibles.</p>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <div id="list" class="list" hidden></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div>
+        <small>ARCHIVO DE LO INSÓLITO</small>
+        <h2>CRÓNICAS<br>ANÓMALAS</h2>
+      </div>
+      <p>Curiosidad sin humo. Una historia extraña es más interesante cuando puedes abrir la fuente y comprobarla.</p>
+    </div>
+    <div class="footer-bottom"><span>© 2026 CRÓNICAS ANÓMALAS</span><span>DOCUMENTAR · CONTRASTAR · PUBLICAR</span></div>
+  </footer>
+</div>
+
+<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__window">
+    <button class="modal__close" id="modalClose" aria-label="Cerrar expediente">×</button>
+    <div class="modal__bar">
+      <span class="verified"><i></i> FUENTES DOCUMENTALES</span>
+      <span id="modalRef"></span>
+    </div>
+    <div class="modal__layout">
+      <aside class="modal__side">
+        <div class="modal__image"><img id="modalImage" src="" alt="" width="800" height="1000"></div>
+        <div class="meta"><small>CATEGORÍA</small><b id="modalCategory"></b></div>
+        <div class="meta"><small>UBICACIÓN</small><b id="modalLocation"></b></div>
+        <div class="meta"><small>COORDENADAS / ID</small><b id="modalCoordinates"></b></div>
+        <div class="meta"><small>RAREZA EDITORIAL</small><b id="modalRarity"></b></div>
+        <div class="meta"><small>LECTURA</small><b id="modalRead"></b></div>
+        <div class="credit" id="modalCredit"></div>
+      </aside>
+      <article class="modal__article">
+        <div class="modal__tag" id="modalTag"></div>
+        <h2 id="modalTitle"></h2>
+        <p class="modal__deck" id="modalDeck"></p>
+        <div class="article-body" id="modalBody"></div>
+        <section class="sources">
+          <div class="sources__head"><span>FUENTES CONSULTADAS</span><small>ABRIR EN NUEVA PESTAÑA ↗</small></div>
+          <div id="modalSources"></div>
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
+</body>
+</html>
