@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CRÓNICAS ANÓMALAS. Archivo editorial de hechos extraños, fenómenos documentados y fuentes consultables.">
+  <meta name="theme-color" content="#0D0D0E">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CRÓNICAS ANÓMALAS | Archivo de lo Insólito">
+  <meta property="og:description" content="Hechos extraños. Fuentes consultables. Cero humo.">
+  <meta property="og:url" content="https://dt-mora.github.io/Insolito/">
+  <link rel="canonical" href="https://dt-mora.github.io/Insolito/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>CRÓNICAS ANÓMALAS | Archivo de lo Insólito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="animations.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="site-frame">
+    <header class="header">
+      <div class="header__top">
+        <a class="brand" href="./" aria-label="Crónicas Anómalas, inicio">
+          <span class="brand__symbol">CA</span>
+          <span class="brand__name">CRÓNICAS<br><b>ANÓMALAS</b></span>
+        </a>
+        <div class="live"><i></i><span>ARCHIVO ACTIVO</span></div>
+        <div class="header__actions">
+          <div class="layout-switch" role="group" aria-label="Vista del archivo">
+            <button class="layout-btn is-active" type="button" data-layout="grid" aria-pressed="true">GRID</button>
+            <button class="layout-btn" type="button" data-layout="list" aria-pressed="false">LISTA</button>
+          </div>
+          <button class="theme-btn" id="themeToggle" type="button" aria-label="Cambiar tema" aria-pressed="false">◐</button>
+        </div>
+      </div>
+      <div class="header__rule">
+        <div class="issue">N.º 001 <span>·</span> EDICIÓN DIGITAL</div>
+        <div class="ticker">HECHOS EXTRAÑOS · FENÓMENOS REALES · FUENTES CONSULTABLES</div>
+        <time id="currentDate"></time>
+      </div>
+    </header>
+
+    <nav class="filters" aria-label="Categorías">
+      <button class="filter is-active" type="button" data-filter="all">#TODAS</button>
+      <button class="filter" type="button" data-filter="ciencia">#CIENCIA_RARA</button>
+      <button class="filter" type="button" data-filter="naturaleza">#NATURALEZA</button>
+      <button class="filter" type="button" data-filter="historia">#HISTORIA_OCULTA</button>
+    </nav>
+
+    <main id="main">
+      
+    <section class="hero">
+      <div class="section-label"><span>01</span> LA ANOMALÍA DEL MES</div>
+      <article class="hero-card" data-article-id="socotra" tabindex="0">
+        <div class="hero-media">
+          <img id="heroImage" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dragonblood_tree_in_Socotra_1.jpg" alt="Árbol de sangre de dragón en Socotra con las montañas Hajhir al fondo" width="1600" height="1000" fetchpriority="high">
+          <div class="hero-overlay"></div>
+          <div class="hero-stamp">EXP-2026</div>
+        </div>
+        <div class="hero-copy">
+          <div class="verified"><i></i> DOCUMENTADO · FUENTES CONSULTABLES</div>
+          <div class="hero-meta"><span>#NATURALEZA</span><span>06 MIN</span><span>RAREZA 5/5</span></div>
+          <h1 id="heroTitle">Socotra: la isla que parece un planeta equivocado</h1>
+          <p id="heroDeck">Un archipiélago del océano Índico donde una proporción extraordinaria de especies es endémica.</p>
+          <div class="hero-bottom">
+            <span id="heroLocation">Socotra, Yemen</span>
+            <button class="open-btn" type="button" data-open-article="socotra">ABRIR EXPEDIENTE <b>↗</b></button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+      <section class="archive" aria-labelledby="archiveTitle">
+        <div class="archive-heading">
+          <div><span>02</span><h2 id="archiveTitle">ARCHIVO <em>RECIENTE</em></h2></div>
+          <p>Casos seleccionados.<br>Fuentes visibles.</p>
+        </div>
+        <div id="grid" class="grid">
+          
+        <article class="card card--large" data-category="ciencia" data-article-id="hessdalen" tabindex="0">
+          <div class="card__media">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hessdalen_lights.png" alt="Registro de larga exposición de una luz de Hessdalen" loading="lazy" width="1200" height="800">
+            <span class="folio">REF: EXP-1184</span>
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>#CIENCIA_RARA</span><span>RAREZA 4/5</span></div>
+            <h3>Las luces de Hessdalen</h3>
+            <p>Un fenómeno luminoso investigado durante décadas mediante cámaras, radar, magnetómetros y otros instrumentos.</p>
+            <button class="card__action" type="button" data-open-article="hessdalen">ABRIR EXPEDIENTE →</button>
+          </div>
+          
+        </article>
+        <article class="card" data-category="historia" data-article-id="mary-celeste" tabindex="0">
+          <div class="card__media">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mary_Celeste_as_Amazon_in_1861.jpg" alt="Pintura del bergantín Amazon, posteriormente rebautizado como Mary Celeste" loading="lazy" width="1200" height="800">
+            <span class="folio">REF: EXP-0821</span>
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>#HISTORIA_OCULTA</span><span>RAREZA 4/5</span></div>
+            <h3>El Mary Celeste: el barco que apareció sin su tripulación</h3>
+            <p>En diciembre de 1872, otro buque encontró al Mary Celeste a la deriva en el Atlántico. La tripulación había desaparecido.</p>
+            <button class="card__action" type="button" data-open-article="mary-celeste">ABRIR EXPEDIENTE →</button>
+          </div>
+          
+        </article>
+        <article class="card card--quote" data-category="ciencia" data-article-id="wow-signal" tabindex="0">
+          <div class="quote">
+            <mark>“</mark>
+            <blockquote>Una señal de radio de banda estrecha detectada en 1977. Duró 72 segundos y nunca volvió a aparecer de la misma manera.</blockquote>
+            <cite>EXP-1977 · 5/5</cite>
+            <button type="button" data-open-article="wow-signal">VER EXPEDIENTE →</button>
+          </div>
+        </article>
+        <article class="card" data-category="naturaleza" data-article-id="blood-falls" tabindex="0">
+          <div class="card__media">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Blood_Falls_2010_01.jpg" alt="Blood Falls en el frente del glaciar Taylor, Antártida" loading="lazy" width="1200" height="800">
+            <span class="folio">REF: EXP-2110</span>
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>#NATURALEZA</span><span>RAREZA 5/5</span></div>
+            <h3>Blood Falls: la corriente roja bajo el hielo</h3>
+            <p>En la Antártida, una salmuera rica en hierro emerge desde el glaciar Taylor y adquiere un color rojo intenso al oxidarse.</p>
+            <button class="card__action" type="button" data-open-article="blood-falls">ABRIR EXPEDIENTE →</button>
+          </div>
+          
+        </article>
+        <article class="card card--wide" data-category="historia" data-article-id="voynich" tabindex="0">
+          <div class="card__media">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Voynich_Manuscript_(100).jpg" alt="Página ilustrada del Manuscrito Voynich" loading="lazy" width="1200" height="800">
+            <span class="folio">REF: EXP-1666</span>
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span>#HISTORIA_OCULTA</span><span>RAREZA 5/5</span></div>
+            <h3>El Manuscrito Voynich: el libro que sigue sin descifrarse</h3>
+            <p>Un manuscrito ilustrado de finales del siglo XV o comienzos del XVI, escrito en un sistema que permanece sin interpretar de forma aceptada.</p>
+            <button class="card__action" type="button" data-open-article="voynich">ABRIR EXPEDIENTE →</button>
+          </div>
+          <div class="wide-index"><small>EXP</small><b>1666</b></div>
+        </article>
+        </div>
+        <div id="list" class="list" hidden>
+          <div class="list-head"><span>REF</span><span>TÍTULO</span><span>CATEGORÍA</span><span>RAREZA</span><span>ABRIR</span></div>
+          
+        <div class="list-row" data-category="naturaleza">
+          <span>EXP-2026</span>
+          <strong>Socotra: la isla que parece un planeta equivocado</strong>
+          <span>#NATURALEZA</span>
+          <span>5/5</span>
+          <button type="button" data-open-article="socotra">ABRIR</button>
+        </div>
+        <div class="list-row" data-category="ciencia">
+          <span>EXP-1184</span>
+          <strong>Las luces de Hessdalen</strong>
+          <span>#CIENCIA_RARA</span>
+          <span>4/5</span>
+          <button type="button" data-open-article="hessdalen">ABRIR</button>
+        </div>
+        <div class="list-row" data-category="historia">
+          <span>EXP-0821</span>
+          <strong>El Mary Celeste: el barco que apareció sin su tripulación</strong>
+          <span>#HISTORIA_OCULTA</span>
+          <span>4/5</span>
+          <button type="button" data-open-article="mary-celeste">ABRIR</button>
+        </div>
+        <div class="list-row" data-category="ciencia">
+          <span>EXP-1977</span>
+          <strong>La señal Wow!</strong>
+          <span>#CIENCIA_RARA</span>
+          <span>5/5</span>
+          <button type="button" data-open-article="wow-signal">ABRIR</button>
+        </div>
+        <div class="list-row" data-category="naturaleza">
+          <span>EXP-2110</span>
+          <strong>Blood Falls: la corriente roja bajo el hielo</strong>
+          <span>#NATURALEZA</span>
+          <span>5/5</span>
+          <button type="button" data-open-article="blood-falls">ABRIR</button>
+        </div>
+        <div class="list-row" data-category="historia">
+          <span>EXP-1666</span>
+          <strong>El Manuscrito Voynich: el libro que sigue sin descifrarse</strong>
+          <span>#HISTORIA_OCULTA</span>
+          <span>5/5</span>
+          <button type="button" data-open-article="voynich">ABRIR</button>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div><small>ARCHIVO DE LO INSÓLITO</small><h2>CRÓNICAS<br>ANÓMALAS</h2></div>
+        <p>Curiosidad sin humo. Una historia extraña es más interesante cuando puedes abrir la fuente y comprobarla.</p>
+      </div>
+      <div class="footer-bottom"><span>© 2026 CRÓNICAS ANÓMALAS</span><span>DOCUMENTAR · CONTRASTAR · PUBLICAR</span></div>
+    </footer>
+  </div>
+
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__window">
+      <button class="modal__close" id="modalClose" type="button" aria-label="Cerrar expediente">×</button>
+      <div class="modal__bar"><span class="verified"><i></i> FUENTES DOCUMENTALES</span><span id="modalRef"></span></div>
+      <div class="modal__layout">
+        <aside class="modal__side">
+          <div class="modal__image"><img id="modalImage" src="" alt="" width="800" height="1000"></div>
+          <div class="meta"><small>CATEGORÍA</small><b id="modalCategory"></b></div>
+          <div class="meta"><small>UBICACIÓN</small><b id="modalLocation"></b></div>
+          <div class="meta"><small>COORDENADAS / ID</small><b id="modalCoordinates"></b></div>
+          <div class="meta"><small>RAREZA EDITORIAL</small><b id="modalRarity"></b></div>
+          <div class="meta"><small>LECTURA</small><b id="modalRead"></b></div>
+          <div class="credit" id="modalCredit"></div>
+        </aside>
+        <article class="modal__article">
+          <div class="modal__tag" id="modalTag"></div>
+          <h2 id="modalTitle"></h2>
+          <p class="modal__deck" id="modalDeck"></p>
+          <div class="article-body" id="modalBody"></div>
+          <section class="sources">
+            <div class="sources__head"><span>FUENTES CONSULTADAS</span><small>ABRIR EN NUEVA PESTAÑA ↗</small></div>
+            <div id="modalSources"></div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
