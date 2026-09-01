@@ -429,3 +429,41 @@ body{
 }
 
 html::after{content:"";position:fixed;top:0;left:0;width:var(--reading-progress,0%);height:2px;background:var(--orange);z-index:9999;pointer-events:none}
+/* =========================================================
+   MOBILE HEADER / FILTER FIX
+   Filters stay in normal document flow on small screens.
+   This prevents overlap with the masthead while scrolling.
+   ========================================================= */
+@media (max-width: 700px) {
+  .header {
+    position: relative !important;
+    z-index: 50 !important;
+  }
+
+  .filters {
+    position: relative !important;
+    top: auto !important;
+    z-index: 20 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 7px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    min-height: 46px !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+    background: var(--bg) !important;
+    backdrop-filter: none !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+}
